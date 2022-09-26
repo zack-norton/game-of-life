@@ -141,13 +141,15 @@ std::vector<std::vector<char>> load_board_state(const std::string filename) {
 }
 
 void printHelpMenu() {
-    std::cout << "TODO: write help menu." << std::endl;
+    std::cout << "-file [filename]      Loads a board state from a file" << std::endl;
+    std::cout << "-width [width]        Loads a board with a given width (defualt is 5)" << std::endl;
+    std::cout << "-height [height]      Loads a board with a given height (default is 5)" << std::endl;
 }
 
 int main(int argc, char *argv[]) {
     InputParser input(argc, argv);
     
-    if(input.cmdOptionExists("-h")){
+    if(input.cmdOptionExists("-h") || input.cmdOptionExists("-help")){
         printHelpMenu();
         return 0;
     }
